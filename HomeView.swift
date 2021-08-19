@@ -56,22 +56,35 @@ struct HomeView: View {
             }
             .padding()
             Button(action: {
-                self.viewRouter.currentPage = "QuizView"
                 self.viewRouter.questions = 3
+                if self.viewRouter.questions > csvArray.count {
+                    print("問題数が不足")
+                } else {
+                    self.viewRouter.currentPage = "QuizView"
+                }
             }) {
                 ButtonDesign(text: "3問", width: 315)
             }
             
             Button(action: {
-                self.viewRouter.currentPage = "QuizView"
+                
                 self.viewRouter.questions = 5
+                if self.viewRouter.questions > csvArray.count {
+                    print("問題数が不足")
+                } else {
+                    self.viewRouter.currentPage = "QuizView"
+                }
             }) {
                 ButtonDesign(text: "5問", width: 315)
             }
             
             Button(action: {
-                self.viewRouter.currentPage = "QuizView"
                 self.viewRouter.questions = 10
+                if self.viewRouter.questions > csvArray.count {
+                    print("問題数が不足")
+                } else {
+                    self.viewRouter.currentPage = "QuizView"
+                }
             }) {
                 ButtonDesign(text: "10問", width: 315)
             }
