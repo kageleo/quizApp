@@ -10,7 +10,7 @@ struct ScoreView: View {
             Text("正解数")
                 .font(.system(size: 40, weight: .bold, design: .default))
                 .padding()
-            Text("\(self.viewRouter.correctAnswer) / \(self.viewRouter.questions + 1)")
+            Text("\(self.viewRouter.correctAnswer) / \(self.viewRouter.questions)")
                 .font(.system(size: 80, weight: .bold, design: .default))
             Spacer()
             Button(action: {
