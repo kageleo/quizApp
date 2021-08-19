@@ -14,12 +14,16 @@ func loadCSV(fileName:String) -> [[String]] {
         // 最後にできる余分な配列を削除
         csvArray.removeLast()
         for i in 0..<csvArray.count {
-            dataArray.append(csvArray[i].components(separatedBy: ","))
+            if csvArray[i].components(separatedBy: ",").count % 6 != 0 {
+                print("csvFile : \(i+1)番目項数不足")
+            } else {
+                dataArray.append(csvArray[i].components(separatedBy: ","))
+            }
         }
         // 初期値の空配列を削除
         dataArray.removeFirst()
     }catch{
-        print("エラー")
+        print("loadCSV : error")
     }
 
     dataArray.shuffle()
